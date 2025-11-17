@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bilangan Terbesar</title>
+</head>
+<body>
+	
+	<h2>Cari Bilangan Terbesar dari 3 Angka</h2>
+	
+	<label for="A">Bilangan A:</label>
+	<input type="number" id="A" value="10">
+	<br>
+	<label for="B">Bilangan B:</label>
+	<input type="number" id="B" value="20">
+	<br>
+	<label for="C">Bilangan C:</label>
+	<input type="number" id="C" value="30">
+	<br>
+	
+	<button onclick="cariTerbesar()">Cari Terbesar</button>
+	
+	<div id="Hasil">Hasil:</div>
+	
+	<br>
+	Nama: Shofia Kamilah Wahyudi
+	<br>
+	Rombel: PPLG X-1
+	<br>
+	Rayon: Ciawi 4</font>
+	
+	<script>
+		function cariTerbesar() {
+			let A = parseFloat(document.getElementById('A').value)|| 0;
+			let B = parseFloat(document.getElementById('B').value)|| 0;
+			let C = parseFloat(document.getElementById('C').value)|| 0;
+		
+			let MAX;
+		
+			MAX = A;
+		
+			if (B > MAX) {
+				MAX = B
+			}
+		
+			if (C > MAX) {
+				MAX = C
+			}
+		
+			document.getElementById('Hasil').innerText =
+				`Bilangan Terbesar Adalah: ${MAX} `;
+		}	
+	
+		
+	</script>
+</body>
+</html>

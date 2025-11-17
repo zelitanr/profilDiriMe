@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GajiBersih</title>
+    </head>
+    <body>
+        <h2>Menentukan Besar Gaji Bersih Karyawan</h2>
+
+        <label for="namaKaryawan">Nama Karyawan :</label>
+        <input type="text" id="namaKaryawan">
+        <br>
+        <label for="gajiPokok">Gaji Pokok :</label>
+        <input type="number" id="gajiPokok">
+       <br>
+        <button onclick="hitungGajiBersih()">Hitung Gaji Bersih</button>
+        <h3>Hasil:</h3>
+        <p id="hasil"></p>
+		
+		<img src="divisi3.jpg" alt="foto kita" width=100 height=90 >
+
+        <script>
+            function hitungGajiBersih() {
+                let namaKaryawan = document.getElementById('namaKaryawan').value;
+                let gajiPokok = parseFloat(document.getElementById('gajiPokok').value) || 0;
+
+                let tunj = 0.2 * gajiPokok;
+                let pjk = 0.15 * (gajiPokok + tunj);
+                let gajiBersih = gajiPokok + tunj - pjk;
+
+                 document.getElementById('hasil').innerHTML = ` <strong>Nama Karyawan:</strong> ${namaKaryawan}<br> Gaji Pokok: Rp ${gajiPokok.toLocaleString('id-ID')}<br>Besar Tunjangan (20%): Rp ${tunj.toLocaleString('id-ID')}<br>Besar Pajak (15%): Rp ${pjk.toLocaleString('id-ID')}<br> <strong>Gaji Bersih: Rp ${gajiBersih.toLocaleString('id-ID')}</strong>`
+            }
+        </script>
+    </body>
+</html>

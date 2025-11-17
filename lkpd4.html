@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mencari Grade</title>
+</head>
+<body>
+  
+  <h2>Cari grade dari rata-rata</h2>
+  
+  <label for="pabp">PABP :</label>
+  <input type="number" id="pabp">	
+  <br>
+  <label for="mtk">MTK :</label>
+  <input type="number" id="mtk">
+  <br>
+  <label for="dpk">DPK :</label>
+  <input type="number" id="dpk">
+  <br>
+  
+  <button onclick="cariGrade()">Cari Grade</button>
+  
+  <div id="hasil">Hasil:</div>
+  
+  <br>
+  Nama: Shofia Kamilah Wahyudi
+  <br>
+  NIS: 12511362
+  <br>
+  Rombel: PPLG X-1
+  <br>
+  Rayon: Ciawi 4
+  
+  <script>
+    function cariGrade() {
+      let PABP = parseFloat(document.getElementById('pabp').value)|| 0;
+      let MTK = parseFloat(document.getElementById('mtk').value)|| 0;
+      let DPK = parseFloat(document.getElementById('dpk').value)|| 0;
+
+      let rata_rata = (PABP + MTK + DPK) / 3;
+	  let rataRata = rata_rata.toFixed(2);
+      let grade;
+
+      if (rata_rata >= 80 && rata_rata <= 100) {
+        grade = "A";
+      } else if (rata_rata >= 75 && rata_rata < 80) {
+        grade = "B";
+      } else if (rata_rata >= 65 && rata_rata < 75) {
+        grade = "C";
+      } else if (rata_rata >= 45 && rata_rata < 65) {
+        grade = "D";
+      } else if (rata_rata >= 0 && rata_rata < 45) {
+        grade = "E";
+      } else {
+        grade = "K";
+      }
+
+      document.getElementById('hasil').innerText = `Rata-rata : ${rataRata} dan Grade kamu: ${grade}`;
+    }
+  </script>
+</body>
+</html>
